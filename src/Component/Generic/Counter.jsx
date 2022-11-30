@@ -22,6 +22,9 @@ export default function Counter() {
   }, [text]);
   return (
     <div className="counter w-100 mt-3">
+      <button className="btn btn-sm w-100 btn-danger text-light text-center">
+        Current Value : {currValue}
+      </button>
       <button
         type="button"
         className="btn btn-primary"
@@ -30,7 +33,7 @@ export default function Counter() {
       >
         Launch Counter
       </button>
-      <Modal text={text} Handler={Handler} currValue={currValue} />
+      <Modal text={text} Handler={Handler} setCurrValue={setCurrValue} />
     </div>
   );
 }

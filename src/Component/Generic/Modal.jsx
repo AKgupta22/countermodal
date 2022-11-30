@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Modal({ text, Handler, currValue }) {
+export default function Modal({ text, Handler, setCurrValue }) {
   return (
     <div
       className="modal fade"
@@ -23,11 +23,13 @@ export default function Modal({ text, Handler, currValue }) {
             ></button>
           </div>
           <div className="modal-body">
-            {currValue > 0 && (
-              <button className="btn btn-sm w-100 btn-danger text-light text-center mb-3">
-                Current Value : {currValue}
-              </button>
-            )}
+            <button
+              className="btn btn-sm w-100 btn-success text-light text-center mb-3"
+              onClick={() => setCurrValue(0)}
+              data-bs-dismiss="modal"
+            >
+              Reset
+            </button>
             <button
               className="btn btn-sm w-100 btn-primary text-light text-center"
               onClick={Handler}
